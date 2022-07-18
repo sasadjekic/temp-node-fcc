@@ -1,0 +1,13 @@
+- VSC - Metoda drag and drop za otvaranje foldera projekta (u new window) u VSC
+- CMD - Ista metoda za putanju dir projekat unutar cmd-a sa spremnom "cd" komandom
+- Scortcut - Terminal - CTR + `
+- kodovi na johnsmilga.com
+- console.log(module) - info o fajlu kao modulu
+- moduli - EXPORT/IMPORT
+module.exports = sayHello; -> const sayHello = require('./5-utils') -> sayHello(names.john)
+module.exports = {peter, john} -> const names = require('./4-names') -> names.john 
+                                  const {john, peter} = require('./4-names') -> john
+- npm init -y
+
+- git init
+- git add .

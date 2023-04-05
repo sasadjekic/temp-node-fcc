@@ -6,6 +6,10 @@ const second = readFileSync('./content/second.txt', 'utf8')
 
 console.log(first, second)
 
+/**
+ * VAZNO - kada se startuje async funkcija program - main flow nastavlja dalje izvrsavanje
+ */
+
 //Sihrono pisanje i kreiranje fajla (ako ga nema) ALI sa flag a dodajemo append u fajl ako ga ima
 //znaci kreira i upise ako nema, a dodaje content ako ga ima
 writeFileSync(
@@ -14,7 +18,7 @@ writeFileSync(
     {flag: 'a'}
     )
 
-
+console.log('start')
 
 //Asihrono citanje i pisanje u fajl - Ugnjezdeni callbac-kovi
 readFile('./content/first.txt', 'utf8', (err, result) => {
@@ -40,6 +44,11 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
                 return;
             }
             console.log(result) //undefined
+            console.log('done with the task')
+
         })
     })
 })
+
+
+console.log('start next task') //OVO CE ICI PRE OVOG GORE CONSOLA.LOG-a!

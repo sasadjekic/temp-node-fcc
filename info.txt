@@ -1,13 +1,165 @@
+1. Moduli export/import - 40 minut - 3-modul, 4-names, 5-util, 6-alt-flav
+2. Async patterns - promisify citanja i pisanja 
+3. Pozivanje modula u kom je pozvana funkcija - odmah izvršavanje - 7-mind-grenade - 52 minut
+4. 
+
+
 - VSC - Metoda drag and drop za otvaranje foldera projekta (u new window) u VSC
 - CMD - Ista metoda za putanju dir projekat unutar cmd-a sa spremnom "cd" komandom
 - Scortcut - Terminal - CTR + `
 - kodovi na johnsmilga.com
 - console.log(module) - info o fajlu kao modulu
 - moduli - EXPORT/IMPORT
-module.exports = sayHello; -> const sayHello = require('./5-utils') -> sayHello(names.john)
+(1 - 40 minut - moduli) module.exports = sayHello; -> const sayHello = require('./5-utils') -> sayHello(names.john)
 module.exports = {peter, john} -> const names = require('./4-names') -> names.john 
                                   const {john, peter} = require('./4-names') -> john
-- npm init -y
 
-- git init
+NODE Projekat                                
+- npm init -y //create package.json (-y - no questioning)
+- npm i express //lokalni install - samo za projekat
+- npm install -g express  //globalno
+
+
+GIT
+- git init 
 - git add .
+- git commit -m "first commit"
+
+git remote add origin https://github.com/sasadjekic/temp-node-fcc.git
+git branch -M main
+git push -u origin main
+
+npm install - za istalaciju npm modula na drugom sistemu po package.json-u 
+
+clone - git clone 'adresa sa githuba'
+
+npm i nodemon -D ili --save-dev - instal kao Developer dependency
+
+Brisanje modula:
+- npm uninstall nodemon
+- brisanje dependency iz package.json pa - npm install...
+
+https://nodesource.com/blog/the-basics-of-package-json-in-node-js-and-npm/
+
+- Obratiti paznju na evente u modulima u dokumentaciji
+
+https://course-api.com/
+
+Kada kloniramo neciji github project mozemo da obrisemo strani url tak osto obrisemo github folder
+da ako hocemo a ga postavimo na github ne bi imali permission errors. Sa ovim komandama u cmd-u:
+rd /s /q .git  ILI rmdir -Force -Recurse .git
+
+-chaine commands - npm install && npm run start
+
+
+VSC 
+quokka - auto izvrsenje js koda
+
+Trazenje pojma u fajlu:
+command paleta - @...
+Precica CTRL + SHIFT + .   !!!!!
+Trazenje pojma BILO GDE!
+Command paleta - #...  (pojavljuje se u kom fajlu se nalazi pojam)
+
+Skok na liniju i karakter
+CTRL + G - 5, 25 npr
+
+selekcija
+SHIFT + <- -> - selekcija po slovo
+
+navigacija
+CTRL + <- -> - skok rec po rec (brza navigacija)
+HOME - pocetak linije
+END - kraj linije
+PGUP/PGDW 
+CTRL + HOME - pocetak fajla
+CTRL + END - kraj fajla
+
+Skok po otvorenim tabovima fajlova
+ALT + <- -> (pa kopiranje iz fajlova npr...)
+
+Manipulacija recima - delete, replace 
+Ako je kursor na reci ovim se selektuje sto dalje omogucava instant brisanje, kopiranje ili izmenu!!!
+Multi klik na CTRL + D selektuje iste pojmove pa multiizmena!!!!
+CTRL + D  (del, CTRL + C, V...)
+Primer trazenje pojma: CTRL + D (rec), CTRL + C, CTRL + G, CTRL + V - rezultat
+ILI PA CTRL + SHIFT + L - za selektovanje svega sto je selektovano sa CTRL + D (visestruki kursor)
+
+Multi klik i edit sa ALT + mouse click - gde sve hocemo
+
+Selekcija linije, visestruko selektuje multiline
+CTRL + L 
+
+Terminal open/close - CTRL + `
+Na desni klik opcije: boja, ime, pozicija...
+
+Snipets... Configure User Snippets
+
+Novi fajl u nepostojecem folderu:
+folder1\folder2\folder3\nekifajl.txt
+
+Trazenje i menjanje svih referenci tj imena neceg
+Desni klik na pojam tj ime pa "Find All References" - sto otvara prozor na levo sa svim referencama
+a doj je selektovano desni klik pa "Rename Symbol"
+
+CTRL + B  - toggle sidebar
+CTRL + , - settings
+
+OPEN/CLOSE File 
+CTRL + SHIFT + P - kucamo nesto npr 8... (pocetno, sto c.p izbaci i odmah ENTER)
+CTRL + W - close file
+
+Kretanje kroz tabove otvorenih fajlova
+CTRL+TAB
+CTRL+SHIFT+TAB
+ILI CTRL + PGUP ili PGDW
+
+Otvaranje drugih prozora pored
+CTRL + \
+
+FIND AND replace 
+CTRL + F
+CTRL + H naravno
+CTRL + SHIFT + F - globalno (OPEN NEW SEARCH EDITOR !, REPLACE ALL)
+
+COPY/PASTE
+CTRL + C - selektuje celu liniju po defaultu!
+
+Visestruki kursor
+CTRL + SHIFT + ALT + strelica gore dole za kursore
+
+RENAME Visestruki
+Na selekciju - F2 - izmena i promeni se svugde
+
+Skakanje na function definition i info o funkciji kao i POZICIJE!
+CTRL + click (na pozi funkc), ili na neku osnovnu 
+
+ZEN MOD
+CTRL + k, pa onda samo Z - open/close
+
+Theme:
+Night Owl
+Tokyo Night
+Github
+Field light
+One Dark Pro
+
+Mime type
+
+REQUEST
+Kada imamo linkovane fajlove, requestovi se prave i za njih
+Pa i za njih mora da se dovuce content i da se prosledi klijentu
+
+styles - url requesta i putanja u linku html fajla moraju da se slazu!!!
+
+EXPRESS 
+instalacija odredjene verzije - npm install express@4.17.1 --save (precaution)
+
+Postavljanje static sajta jednim redom koda - static resource
+app.use(express.static('./navbar-app'))
+app.use(express.static('C:/Users/aca/Desktop/Node w3/Aboutme'))
+
+algolia - rest apis za vezbu
+https://hn.algolia.com/api
+
+axios - olaksava setovanje requesta

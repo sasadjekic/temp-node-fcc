@@ -10,8 +10,8 @@ console.log(first, second)
 //znaci kreira i upise ako nema, a dodaje content ako ga ima
 writeFileSync(
     './content/result-sync.txt', 
-    `Here is the result: ${first}, ${second}`,
-    {flag: 'a'}
+    `Here is the result: ${first}, ${second}\n`,
+    {flag: 'a'} //dadavanje u fajla sa flagom
     )
 
 
@@ -25,6 +25,9 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
     //console.log(result)
     //Smestamo content iz prvog citanja u varijablu a zatim citamo drugi fajl i ponavljamo radnju...
     const first = result;
+
+    //Zatim dalje citamo drugi fajl i nakon sto se zavrsi funkcija aktivira se CB funkcija
+    //ako ne ubacimo 'utf8' encoding dobijemo BUFFER...
     readFile('./content/second.txt', 'utf8', (err, result) => {
         if(err) {
             console.log(err);
